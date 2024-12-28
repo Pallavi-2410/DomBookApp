@@ -5,17 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./stylesCss/index.css">
 </head>
 
 <body>
     <div>
-        <form id="form">
-            <h1>Login Page</h1>
-            <input id="email" type="email" placeholder="Enter Email">
-            <input id="password" type="password" placeholder="Enter Password">
-            <input type="submit" value="Login">
+        <form id="bookForm">
+            <h1>Add New Books</h1>
+            <input id="bookTitle" type="text" placeholder="Enter Title">
+            <input id="bookAuthor" type="text" placeholder="Enter Author">
+            <select id="category">
+                <option value="SelectCat">Category</option>
+                <option value="fiction">Fiction</option>
+                <option value="comedy">Comedy</option>
+                <option value="technical">Technical</option>
+            </select>
+            <input id="submitAdd" type="submit" value="Add Book">
         </form>
     </div>
+    <div id="cont"></div>
 </body>
 <script src="./scripts/index.js" type="module"></script>
 <script src="./scripts/navbar.js" type="module"></script>

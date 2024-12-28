@@ -1,0 +1,43 @@
+.navBar {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(141, 199, 141);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navBar a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+}
+.navBar a:hover{
+    color: yellow;
+}
+
+form {
+    /* border: 1px solid; */
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    padding: 20px;
+}
+input, #category {
+    width: 300px;
+    height: 30px;
+
+}
+form>h1 {
+    font-size: 30px;
+    color: rgb(72, 128, 72);
+    text-align: center;
+}
+
+#cont {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
