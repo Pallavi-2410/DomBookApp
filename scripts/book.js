@@ -14,6 +14,23 @@ availableBook.addEventListener("click", function() {
         alert("Book Not Available")
     }
     loginData()
+
+    fetch(`${baseUrl}/books/isAvailable == false`, {
+        method: "GET",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(bookCred)
+    })
+        .then(() => {
+            alert("Book Added Successfully")
+            bookForm.reset()
+        })
+        .catch((err) => {
+            alert("Something wrong")
+            console.log(err);
+        });
+
 })
 
 borrowedBooks.addEventListener("click", () =>{
@@ -21,18 +38,3 @@ borrowedBooks.addEventListener("click", () =>{
 })
 
 
-fetch(`${baseUrl}/books/isAvailable == false`, {
-    method: "GET",
-    headers: {
-        "content-type": "application/json"
-    },
-    body: JSON.stringify(bookCred)
-})
-    .then(() => {
-        alert("Book Added Successfully")
-        bookForm.reset()
-    })
-    .catch((err) => {
-        alert("Something wrong")
-        console.log(err);
-    });
