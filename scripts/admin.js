@@ -21,6 +21,7 @@ event.preventDefault();
 let title = bookForm.bookTitle.value
 let author = bookForm.bookAuthor.value
 let select = bookForm.SelectCat.value
+let category = bookForm.category.value
 let fiction = bookForm.fiction.value
 let comedy = bookForm.comedy.value
 let technical = bookForm.technical.value
@@ -89,7 +90,7 @@ function displayBooks(arr){
         status.textContent = `Availability Status: ${status.value}`
 
         //Availability Status
-        if(status.value == true){
+        if(isAvailable.value == true){
             alert("Book is Available")    
         }else{
             alert("Book Not Available")
@@ -102,5 +103,20 @@ function displayBooks(arr){
 
 verifyBtn.addEventListener("click", () => {
     prompt("Are you sure to Verify..?")
-    if(yes)
+    if(isVerified.value == false){
+        alert("Book is not verified")
+    }
+})
+
+deleteBtn.addEventListener("click", function() {
+    fetch(`${baseUrl}/books`, {
+        method: "DELETE"
+})
+.then(() => {
+    alert("Are you sure you want to Delete")
+})
+.catch((err) =>{
+    alert("Something is wrong")
+    console.log(err)
+})
 })
