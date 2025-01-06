@@ -16,7 +16,7 @@ loginData()
 // localStorage.setItem("books", JSON.stringify(books))
 
 let form = document.getElementById("bookForm")
-form.addEventListener("submit" , () => {
+form.addEventListener("submit" , (event) => {
 event.preventDefault();
 let title = bookForm.bookTitle.value
 let author = bookForm.bookAuthor.value
